@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delet</title>
+</head>
+<body>
+    <h1 id="delete-text">Type koro delete koro</h1>
+    <input id="text-field" type="text">
+    <button id="btn-delete" disabled>Delete</button>
+    <script>
+        document.getElementById('text-field').addEventListener('keyup', function(event){
+            const secret = event.target.value;
+            // console.log(secret);
+            const btnDelete = document.getElementById('btn-delete');
+            if(secret === 'Delete'){
+                btnDelete.removeAttribute('disabled')
+            }else{
+                btnDelete.setAttribute('disabled',true)
+            }
+        })
+        document.getElementById('btn-delete').addEventListener('click', function(){
+            const deleteText = document.getElementById('delete-text');
+            deleteText.style.display = 'none'
+        })
+    </script>
+</body>
+</html>
